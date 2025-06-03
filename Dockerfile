@@ -1,4 +1,5 @@
 FROM n8nio/n8n
 
-RUN apt-get update && apt-get install -y libvips-dev \
- && npm install -g sharp
+# Alpine verwendet apk statt apt-get
+RUN apk add --no-cache vips-dev && \
+    npm install -g sharp
